@@ -43,5 +43,7 @@ document.querySelector('.addNote').addEventListener('click',async ()=>{
     const text = noteData.value;
     const id = await addNote(text);
     createNote(id,text);
+
+    noteData.value = '';
 })
 await display();
