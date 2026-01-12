@@ -1,6 +1,6 @@
 {
   "name": "note-app",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "create store delete notes ",
   "homepage": "https://github.com/Timalsinarabin/Note-app#readme",
   "bugs": {
@@ -14,12 +14,13 @@
   "author": "rabin",
   "type": "module",
   "main": "index.js",
-  "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview",
-    "release": "standard-version"
-  },
+"scripts": {
+  "dev": "vite --host",
+  "build": "vite build",
+  "preview": "vite preview",
+  "release": "standard-version",
+  "deploy": "gh-pages -d dist"
+},
   "dependencies": {
     "JSONStream": "^1.3.5",
     "add-stream": "^1.0.0",
