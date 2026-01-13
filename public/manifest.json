@@ -1,13 +1,13 @@
 {
-  "name": "Notes",
+  "name": "Note App",
   "short_name": "Notes",
-  "start_url": "/",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#4a90e2",
+  "theme_color": "#2196f3",
   "icons": [
     {
-      "src": "/icon.svg",
+      "src": "icon.svg",
       "sizes": "192x192",
       "type": "image/svg+xml"
     }

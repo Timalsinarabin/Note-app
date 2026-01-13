@@ -17,7 +17,11 @@
             <button class="addNote">Add</button>
         </div>
     </section>
-    
+    <script>
+        if ('serviceWorker' in navigator){
+            navigator.serviceWorker.register('/sw.js');
+        }   
+    </script>
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
     <script src="index.js"></script>
 
