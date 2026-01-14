@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="manifest" href="public/manifest.json">
-    <link rel="icon" href="public/icon.svg">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="notes.png">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note app</title>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js');
+        });
+}
+
+    </script>
 </head>
 <body>
     <header class="logo"><h1>Take a note</h1></header>
@@ -17,11 +25,7 @@
             <button class="addNote">Add</button>
         </div>
     </section>
-    <script>
-        if ('serviceWorker' in navigator){
-            navigator.serviceWorker.register('/sw.js');
-        }   
-    </script>
+    
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
     <script src="index.js"></script>
 
