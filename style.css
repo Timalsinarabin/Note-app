@@ -20,15 +20,20 @@
     gap: 20px;
 }
 .items{
-    display: flex;
-    justify-content: space-between;
+    white-space: pre-wrap;
     padding: 15px;
     border: 2px solid black;
-    gap: 5px;
+    overflow: hidden;
+    max-height: 19px;
 }
-.container button{
-    border-radius: 10px;
-    max-height: 20px;
+
+.container button {
+    display: flex;
+    justify-self: right;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    height: 30px;
     min-width: 30px;
     cursor: pointer;
 }
@@ -46,4 +51,14 @@
 .takeNote button{
     cursor: pointer;
     width: 50px;
+}
+.note{
+    resize: none;
+}
+.items:hover{
+    background-color: rgb(244, 255, 255);
+    max-height: 100%;
+}
+.items::first-line{
+    font-size: 1.8em;
 }
