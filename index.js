@@ -4,7 +4,7 @@ const APP={
     init(){
         if('serviceWorker' in navigator){
             navigator.serviceWorker.register('./sw.js',{
-                scope: '/'
+                scope: '/Note-app/'
             }).then(registration=>{
                 APP.SW = registration.installing || 
                         registration.waiting ||
