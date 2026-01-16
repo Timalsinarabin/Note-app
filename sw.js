@@ -6,7 +6,8 @@ let assets = [
     './index.js',
     './style.css',
     './notes.png',
-    './manifest.json'
+    './manifest.json',
+    'https://unpkg.com/dexie@latest/dist/dexie.js'
 ];
 self.addEventListener('install',(ev)=>{
     console.log(`version ${version} installed`)
