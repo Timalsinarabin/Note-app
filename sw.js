@@ -28,10 +28,17 @@ self.addEventListener('activate',(ev)=>{
 
 })
 
+async function fetchAssets(ev) {
+    try{
+        const response = await fetch(ev.request)
+        return response
+    }catch(err){
+        const cache =await caches.open(cacheName)
+        return cache.match(ev.request)
+    }
+    
+}
 self.addEventListener('fetch',(ev)=>{
     console.log(`fetch for ${ev.request.url}`);
-    ev.respondWith(
-        caches.match(ev.request)
-            .then(cacheRes=>cacheRes || fetch(ev.request))   
-    );
+    ev.respondWith(fetchAssets(ev))
 })
