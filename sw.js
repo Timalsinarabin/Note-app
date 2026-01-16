@@ -11,6 +11,7 @@ let assets = [
 ];
 self.addEventListener('install',(ev)=>{
     console.log(`version ${version} installed`)
+    self.skipWaiting();
     ev.waitUntil(
         caches.open(cacheName).then(cache=>{
             cache.addAll(assets).then(()=>{

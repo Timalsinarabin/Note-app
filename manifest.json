@@ -2,7 +2,7 @@
   "name": "Note App",
   "short_name": "Notes",
   "start_url": "/Note-app/index.html",
-  "scope": "/Note-app/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2196f3",
