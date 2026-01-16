@@ -31,5 +31,6 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ]
+  ],
+  "version": "1.2.0"
 }

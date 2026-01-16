@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/Timalsinarabin/Note-app/compare/v1.1.0...v1.2.0) (2026-01-16)
+
+
+### Features
+
+* Ui touch enhancement ([1d89a5c](https://github.com/Timalsinarabin/Note-app/commit/1d89a5cd93caa05d45c9c77840ae16656b9ad4ee))
+
+
+### Bug Fixes
+
+* icon showup ([e2314e3](https://github.com/Timalsinarabin/Note-app/commit/e2314e3fcaca16c7a0112d0da185190cab02e819))
+* offline capable ([84c14cd](https://github.com/Timalsinarabin/Note-app/commit/84c14cd62026a4ad9725b4db722f737591389fd5))
+* title of site ([ae8364e](https://github.com/Timalsinarabin/Note-app/commit/ae8364ee6a8f42dd6d21fc4dbd6a83d9573ce94f))
+
 ## [1.1.0](https://github.com/Timalsinarabin/Note-app/compare/v1.0.1...v1.1.0) (2026-01-13)
 
 
