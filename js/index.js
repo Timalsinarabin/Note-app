@@ -32,7 +32,8 @@ async function display(){
     donenotes.forEach(donenote =>{
         let color = 'green';
         let mark = 'done';
-        createNote(donenote.id,donenote.text,color,mark);
+        let dec = 'line-through';
+        createNote(donenote.id,donenote.text,color,mark,dec);
     })
     notes.forEach(note => {
         createNote(note.id,note.text);
@@ -44,11 +45,18 @@ async function display(){
     })
 }
 
-function createNote(id,text,color,mark){
+function createNote(id,text,color,mark,dec){
     const div = document.createElement('div');
     div.className='items';
-    div.style.backgroundColor = color;
 
+    const note = document.createElement('div');
+    note.className='note';
+
+    const btns = document.createElement('div');
+    btns.className='btns';
+
+    div.style.backgroundColor = color;
+    note.style.textDecoration = dec;
     const btn = document.createElement('button');
     btn.className='delbtn';
     btn.innerText = 'X';
@@ -62,7 +70,7 @@ function createNote(id,text,color,mark){
     btnDone.className='btnDone';
 
     const btnDrop = document.createElement('button');
-    btnDone.className='btnDrop';
+    btnDrop.className='btnDrop';
 
     if(mark=='done'){
         btnDone.innerText = 'Done';
@@ -74,7 +82,7 @@ function createNote(id,text,color,mark){
     }
     else{
         btnDone.innerText = 'Mark as Done'; 
-        btnDrop.innerText = 'Mark asDrop';
+        btnDrop.innerText = 'Mark as Drop';
         btnDone.addEventListener('click',async()=>{
             doneNote(text,id);
             div.style.backgroundColor = 'green';
@@ -90,10 +98,14 @@ function createNote(id,text,color,mark){
     }
     
 
-    div.appendChild(document.createTextNode(text));
-    div.appendChild(btn);
-    div.appendChild(btnDone);
-    div.appendChild(btnDrop)
+    note.appendChild(document.createTextNode(text));
+    
+    btns.appendChild(btnDone);
+    btns.appendChild(btnDrop);
+    btns.appendChild(btn);
+
+    div.appendChild(note);
+    div.appendChild(btns);
     assignNote.appendChild(div);
 }
 const noteData = document.querySelector('.note');
