@@ -88,6 +88,7 @@ function createNote(id,text,color,mark,dec){
             div.style.backgroundColor = 'green';
             btnDone.innerText = 'Done';
             btnDrop.style.display = 'none';
+            note.style.textDecoration = 'line-through';
         })
         btnDrop.addEventListener('click',async()=>{
             dropNote(text,id);
