@@ -1,39 +1,44 @@
-const version=1;
+const version=2;
 const cacheName = `note-cache-${version}`;
 let assets = [
     './',
     './index.html',
-    './index.js',
-    './style.css',
-    './notes.png',
+    './js/index.js',
+    './assets/style/style.css',
+    './assets/notes.png',
     './manifest.json',
     'https://unpkg.com/dexie@latest/dist/dexie.js'
 ];
 self.addEventListener('install',(ev)=>{
-    console.log(`version ${version} installed`)
+    console.log(`version ${version} installed`);
     self.skipWaiting();
+
     ev.waitUntil(
-        caches.open(cacheName).then(cache=>{
-            cache.addAll(assets).then(()=>{
-                console.log(`${cacheName} has been updated`);
-            })
-        .catch((err)=>{
-            console.log(`failed to update ${cacheName + err}`)
-        })
-})
-    )
+        caches.open(cacheName)
+            .then(cache=> cache.addAll(assets))
+            .then(()=>console.log(`${cacheName} has been updated`))
+            .catch((err)=>console.log(`failed to update ${cacheName + err}`))
+    );
 });
 
 self.addEventListener('activate',(ev)=>{
-    console.log('activated');
+    ev.waitUntil(
+        caches.keys().then(keys =>
+            Promise.all(
+                keys.filter(key => key !== cacheName)
+                    .map(key => caches.delete(key))
+            )
+        )
+    );
+    self.clients.claim();
+    console.log("activated");
 
 })
 
 async function fetchAssets(ev) {
     try{
-        const response = await fetch(ev.request)
-        return response
-    }catch(err){
+        return await fetch(ev.request)
+    }catch{
         const cache =await caches.open(cacheName)
         return cache.match(ev.request)
     }
