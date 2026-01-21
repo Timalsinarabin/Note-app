@@ -25,11 +25,9 @@
     border: 2px solid black;
     overflow: hidden;
     max-height: 19px;
+    transition: max-height 0.7s ease;
 }
 
-.container button {
-    display: flex;
-}
 .takeNote{
     display: flex;
     justify-content: center;
@@ -40,16 +38,19 @@ textarea#note {
     width: 50%;
     height: 50px;
     padding: 10px;
+    border: 1px solid black;
 }
 .takeNote button{
     cursor: pointer;
     width: 50px;
+    border: 1px solid black;
 }
 .note{
     resize: none;
 }
 .items:hover{
-    max-height: 100%;
+    max-height: 20vh;
+    overflow: auto;
 }
 
 .items::first-line{
@@ -75,4 +76,24 @@ textarea#note {
     height: 30px;
     width: 30px;
 }
-
+.pageToggle{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.pageToggle button{
+    width: 30px;
+    height: 33px;
+    font-size: 1.2em;
+}
+.pageToggle div{
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
