@@ -12,6 +12,13 @@
     <header class="logo"><h1>Take a note</h1></header>
     <section class="main">
         <div class="container"></div>
+
+        <div class="pageToggle">
+            <button class="prevPage"><</button>
+            <div class="currPage"></div>
+            <button class="nextPage">></button>
+        </div>
+
         <div class="takeNote">
             <textarea class="note" id="note" rows="2"></textarea>
             <button class="addNote">Add</button>
@@ -19,7 +26,8 @@
     </section>
     <script src="js/swregister.js"></script>
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
-    <script src="js/index.js"></script>
     <script src="js/pagination.js"></script>
+    <script src="js/index.js"></script>
+    
 </body>
 </html>
