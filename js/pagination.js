@@ -46,12 +46,14 @@ async function createNote(id,text,color,mark,dec){
             div.style.backgroundColor = 'green';
             btnDone.innerText = 'Done';
             btnDrop.style.display = 'none';
+            btn.style.display = 'none'
         })
         btnDrop.addEventListener('click',async()=>{
             dropNote(text,id);
             div.style.backgroundColor = 'red';
             btnDrop.innerText = 'Droped';
             btnDone.style.display = 'none';
+            btn.style.display = 'none'
         })
     }
     
