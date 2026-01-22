@@ -46,8 +46,7 @@ const assignNote = document.querySelector('.container');
 document.querySelector('.addNote').addEventListener('click',async ()=>{
     const text = noteData.value;
     const id = await addNote(text);
-    let color = 'white';
-    createNote(id,text,color);
+    createNote(id,text);
 
     noteData.value = '';
 })

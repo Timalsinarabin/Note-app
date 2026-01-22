@@ -2,6 +2,30 @@
     margin: 0;
     padding: 0;
 }
+:root{
+    --bg-color: white;
+    --text-color: black;
+}
+.dark-mode{
+    --bg-color: #121212;
+    --text-color: white;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.mode{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    border: none;
+    background-color: transparent;
+}
 .logo{
     height: 100px;
     display: flex;
@@ -23,6 +47,7 @@
     white-space: pre-wrap;
     padding: 15px;
     border: 2px solid black;
+    box-shadow: 1px 1px 5px grey;
     overflow: hidden;
     max-height: 19px;
     transition: max-height 0.7s ease;
@@ -65,7 +90,7 @@ textarea#note {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: transparent;
+    background-color: white;
     border: 2px solid black;
 }
 .btnDone,.btnDrop{
@@ -96,4 +121,24 @@ textarea#note {
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
+}
+.items::-webkit-scrollbar{
+    scrollbar-width: thin;
+}
+.items::-webkit-scrollbar-thumb{
+    background-color: rgb(194, 194, 194);
+    border-radius: 50px;
+}
+.btnDone:hover{
+background-color: lime;
+}
+.btnDrop:hover{
+    background-color: red;
+}
+.delbtn:hover{
+    background-color: rgb(109, 100, 100);
+}
+    
+.prevPage,.nextPage{
+    cursor: pointer;
 }
