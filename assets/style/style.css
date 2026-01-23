@@ -44,6 +44,7 @@ body{
     gap: 20px;
 }
 .items{
+    position: relative;
     white-space: pre-wrap;
     padding: 15px;
     border: 2px solid black;
@@ -90,11 +91,18 @@ textarea#note {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: white;
-    border: 2px solid black;
 }
-.btnDone,.btnDrop{
+.btnDone{
     width: 40%;
+}
+.btnPin{
+    cursor: pointer;
+    font-size: large;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: transparent;
+    border: none;
 }
 .delbtn{
     border-radius: 20px;
@@ -138,7 +146,7 @@ background-color: lime;
 .delbtn:hover{
     background-color: rgb(109, 100, 100);
 }
-    
+
 .prevPage,.nextPage{
     cursor: pointer;
 }
