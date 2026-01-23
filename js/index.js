@@ -31,9 +31,15 @@ async function display(){
     let donenotes = await db.Done.toArray();
     let dropnotes = await db.Drop.toArray();
     allNotes = [
+        ...dropnotes.map(n=> ({...n,color: ["#FFF9C4",
+  "#f8af4a",
+  "#c56dd4", 
+  "#a7d3f6",  
+  "#a8e4aa", 
+  "#F8BBD0" ],mark:'droped',dec:''})),
         ...undonenotes.map(n=> ({...n,color:'',mark:'',dec:''})),
-        ...donenotes.map(n=> ({...n,color:'green',mark:'done',dec: 'line-through' })),
-        ...dropnotes.map(n=> ({...n,color:'red',mark:'droped',dec:''}))
+        ...donenotes.map(n=> ({...n,color: ['#529352'],mark:'done',dec: 'line-through' }))
+        
     ];
     
     render(allNotes);
@@ -44,10 +50,12 @@ const noteData = document.querySelector('.note');
 const assignNote = document.querySelector('.container');
 
 document.querySelector('.addNote').addEventListener('click',async ()=>{
+    if(noteData.value.trim()==''){
+        return;
+    }
     const text = noteData.value;
     const id = await addNote(text);
-    createNote(id,text);
-
+    await createNote(id,text);
     noteData.value = '';
 })
 display();

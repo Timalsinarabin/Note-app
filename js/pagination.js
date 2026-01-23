@@ -2,7 +2,7 @@
 let currentPage = 1;
 const itemsPerPage = 4;
 
-async function createNote(id,text,color,mark,dec){
+async function createNote(id,text,color='white',mark = false,dec = false){
     const div = document.createElement('div');
     div.className='items';
 
@@ -12,7 +12,7 @@ async function createNote(id,text,color,mark,dec){
     const btns = document.createElement('div');
     btns.className='btns';
 
-    div.style.backgroundColor = color;
+    div.style.backgroundColor = color[Math.floor(Math.random() * color.length)];
     note.style.textDecoration = dec;
 
     const btn = document.createElement('button');
@@ -27,31 +27,31 @@ async function createNote(id,text,color,mark,dec){
     const btnDone = document.createElement('button');
     btnDone.className='btnDone';
 
-    const btnDrop = document.createElement('button');
-    btnDrop.className='btnDrop';
+    const btnPin = document.createElement('div');
+    btnPin.className='btnPin';
 
     if(mark=='done'){
         btnDone.innerText = 'Done';
-        btnDrop.style.display = 'none'
+        btnPin.style.display = 'none'
     }
     else if(mark == 'droped'){
         btnDone.style.display = 'none'
-        btnDrop.innerText = 'Dropped';
+        btnPin.innerText = '📌';
     }
     else{
         btnDone.innerText = 'Mark as Done'; 
-        btnDrop.innerText = 'Mark as Drop';
+        btnPin.innerText = 'Pin';
         btnDone.addEventListener('click',async()=>{
             doneNote(text,id);
             div.style.backgroundColor = 'green';
             btnDone.innerText = 'Done';
-            btnDrop.style.display = 'none';
+            btnPin.style.display = 'none';
             btn.style.display = 'none'
         })
-        btnDrop.addEventListener('click',async()=>{
+        btnPin.addEventListener('click',async()=>{
             dropNote(text,id);
-            div.style.backgroundColor = 'red';
-            btnDrop.innerText = 'Droped';
+            div.style.backgroundColor = "#ffbfa9";
+            btnPin.innerText = '📌';
             btnDone.style.display = 'none';
             btn.style.display = 'none'
         })
@@ -61,7 +61,7 @@ async function createNote(id,text,color,mark,dec){
     note.appendChild(document.createTextNode(text));
     
     btns.appendChild(btnDone);
-    btns.appendChild(btnDrop);
+    btns.appendChild(btnPin);
     btns.appendChild(btn);
 
     div.appendChild(note);
