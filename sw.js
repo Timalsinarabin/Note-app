@@ -1,9 +1,12 @@
 const version=2;
 const cacheName = `note-cache-${version}`;
 let assets = [
-    './',
+   './',
     './index.html',
     './js/index.js',
+    './js/mode.js',
+    './js/swregister.js',
+    './js/pagination.js',
     './assets/style/style.css',
     './assets/notes.png',
     './manifest.json',
