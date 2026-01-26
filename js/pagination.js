@@ -17,7 +17,7 @@ async function createNote(id,text,color='white',mark = false,dec = false){
 
     const btn = document.createElement('button');
     btn.className='delbtn';
-    btn.innerText = 'X';
+    btn.innerText = '⌫';
     
     btn.addEventListener('click',async()=>{
         await delNote(id);
@@ -35,12 +35,7 @@ async function createNote(id,text,color='white',mark = false,dec = false){
         btnPin.style.display = 'none'
     }
     else if(mark == 'droped'){
-        btnDone.style.display = 'none'
-        btnPin.innerText = '📌';
-    }
-    else{
-        btnDone.innerText = 'Mark as Done'; 
-        btnPin.innerText = 'Pin';
+        btnDone.innerHTML = 'Mark as Done';
         btnDone.addEventListener('click',async()=>{
             doneNote(text,id);
             div.style.backgroundColor = 'green';
@@ -48,9 +43,21 @@ async function createNote(id,text,color='white',mark = false,dec = false){
             btnPin.style.display = 'none';
             btn.style.display = 'none'
         })
+        btnPin.innerText = '📌';
+    }
+    else{
+        btnDone.innerText = 'Mark as Done'; 
+        btnPin.innerText = 'Pin';
+        btnDone.addEventListener('click',async()=>{
+            doneNote(text,id);
+            div.style.backgroundColor = ' rgba(16, 185, 129, 0.2)';
+            btnDone.innerText = 'Done';
+            btnPin.style.display = 'none';
+            btn.style.display = 'none'
+        })
         btnPin.addEventListener('click',async()=>{
             dropNote(text,id);
-            div.style.backgroundColor = "#ffbfa9";
+            div.style.backgroundColor = "rgba(251, 146, 60, 0.2)";
             btnPin.innerText = '📌';
             btnDone.style.display = 'none';
             btn.style.display = 'none'

@@ -9,9 +9,20 @@
     <title>Note app</title>
 </head>
 <body>
-    <button class="mode">☀️</button>
-    <header class="logo"><h1>Take a note</h1></header>
+    <aside class="sidebar">
+        <div class="sidebar-menu">☰</div>
+        <div class="allnotes">All notes</div>
+        <div class="pinnednote">pinned notes</div>
+        <div class="donenotes">Done notes</div>
+        <div class="undonenotes">Undone notes</div>
+    </aside>
+    <div class="menu">☰</div>
     <section class="main">
+        <div class="topbar">
+            
+            <header class="logo"><h1>Take a note</h1></header>
+            <button class="mode">☀️</button>
+        </div>
         <div class="container"></div>
 
         <div class="pageToggle">
@@ -22,13 +33,14 @@
 
         <div class="takeNote">
             <textarea class="note" id="note" rows="2"></textarea>
-            <button class="addNote">Add</button>
+            <button class="addNote">Save</button>
         </div>
     </section>
     <script src="js/swregister.js"></script>
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
     <script src="js/mode.js"></script>
     <script src="js/pagination.js"></script>
+    <script src="js/sidebar.js"></script>
     <script src="js/index.js"></script>
     
 </body>
