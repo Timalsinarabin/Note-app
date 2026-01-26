@@ -7,12 +7,10 @@ modeButton.addEventListener('click',()=>{
         note.style.color = 'white';
         note.style.border = '1px solid white';
         btns.style.color = 'grey';
-        modeButton.style.backgroundColor = 'black';
         
     }
     else{
         modeButton.innerText = '☀️'
-        modeButton.style.backgroundColor = 'white';
         modeButton.style.color = 'black';
         note.style.color = 'black';
         note.style.border = '1px solid black';

@@ -7,6 +7,7 @@ let assets = [
     './js/mode.js',
     './js/swregister.js',
     './js/pagination.js',
+    './js/sidebar.js',
     './assets/style/style.css',
     './assets/notes.png',
     './manifest.json',
