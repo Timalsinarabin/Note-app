@@ -22,6 +22,7 @@ async function createNote(id,text,color='white',mark = false,dec = false){
     btn.addEventListener('click',async()=>{
         await delNote(id);
         div.remove();
+        display();
     });
 
     const btnDone = document.createElement('button');
@@ -31,36 +32,36 @@ async function createNote(id,text,color='white',mark = false,dec = false){
     btnPin.className='btnPin';
 
     if(mark=='done'){
-        btnDone.innerText = 'Done';
-        btnPin.style.display = 'none'
+        btnDone.style.display = 'none';
+        btnPin.style.display = 'none';
     }
     else if(mark == 'droped'){
         btnDone.innerHTML = 'Mark as Done';
         btnDone.addEventListener('click',async()=>{
             doneNote(text,id);
             div.style.backgroundColor = 'green';
-            btnDone.innerText = 'Done';
+            btnDone.style.display = 'none';
             btnPin.style.display = 'none';
             btn.style.display = 'none'
         })
         btnPin.innerText = '📌';
+        
     }
     else{
         btnDone.innerText = 'Mark as Done'; 
         btnPin.innerText = 'Pin';
         btnDone.addEventListener('click',async()=>{
             doneNote(text,id);
-            div.style.backgroundColor = ' rgba(16, 185, 129, 0.2)';
-            btnDone.innerText = 'Done';
+            div.style.backgroundColor = 'rgba(0, 194, 71, 0.75)';
+            btnDone.style.display = 'none';
             btnPin.style.display = 'none';
-            btn.style.display = 'none'
         })
         btnPin.addEventListener('click',async()=>{
             dropNote(text,id);
             div.style.backgroundColor = "rgba(251, 146, 60, 0.2)";
             btnPin.innerText = '📌';
             btnDone.style.display = 'none';
-            btn.style.display = 'none'
+            display();
         })
     }
     

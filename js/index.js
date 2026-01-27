@@ -64,24 +64,28 @@ async function display(mark = false){
         render(allNotes);
     }
 }
-
+const main = document.querySelector('.main');
 const noteData = document.querySelector('.note');
-noteData.value = 'Enter your note here...';
-document.querySelector('.note').addEventListener('focus',()=>{
-    if(noteData.value=='Enter your note here...'){
-        noteData.value = '';
-    }
-});
+
 const assignNote = document.querySelector('.container');
 
 document.querySelector('.addNote').addEventListener('click',async ()=>{
     if(noteData.value.trim()==''){
+        const errDiv = document.createElement('div');
+        errDiv.className = 'errDiv';
+        errDiv.innerText = 'Please enter a valid note';
+        errDiv.style.color = 'red';
+        main.appendChild(errDiv);
+        setTimeout(()=>{
+            errDiv.classList.add('animateErr');
+        },2000);
         return;
     }
     const text = noteData.value;
     const id = await addNote(text);
     await createNote(id,text);
     noteData.value = '';
+    display();
 })
 const sidebar = document.querySelector('.sidebar');
 document.querySelector('.menu').addEventListener('click',()=>{

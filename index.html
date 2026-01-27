@@ -16,11 +16,13 @@
         <div class="donenotes">Done notes</div>
         <div class="undonenotes">Undone notes</div>
     </aside>
-    <div class="menu">☰</div>
+    
     <section class="main">
         <div class="topbar">
-            
-            <header class="logo"><h1>Take a note</h1></header>
+            <header class="logo">
+                <div class="menu">☰</div>
+                <h1>Take a note</h1>
+            </header>
             <button class="mode">☀️</button>
         </div>
         <div class="container"></div>
@@ -32,7 +34,7 @@
         </div>
 
         <div class="takeNote">
-            <textarea class="note" id="note" rows="2"></textarea>
+            <textarea class="note" id="note" rows="2" placeholder="Enter your note here..." autofocus></textarea>
             <button class="addNote">Save</button>
         </div>
     </section>
