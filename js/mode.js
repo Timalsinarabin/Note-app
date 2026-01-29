@@ -6,9 +6,11 @@ modeButton.addEventListener('click',()=>{
     if(document.body.classList.contains('dark-mode')){
         
         localStorage.setItem('mode','dark');
+        modeButton.innerText = '🌙'
     }
     else{
         localStorage.setItem('mode','light');
+        modeButton.innerText = '☀️' 
     }
 } 
 );  
@@ -17,9 +19,8 @@ if(localStorage.getItem('mode')==='dark'){
     modeButton.innerText = '🌙'
     note.style.color = 'white';
     note.style.border = '1px solid white';
-    btns.style.color = 'grey';
 }
-else{
+else if(localStorage.getItem('mode')==='light'){
     document.body.classList.remove('dark-mode');
     modeButton.innerText = '☀️'
     note.style.color = 'black';
