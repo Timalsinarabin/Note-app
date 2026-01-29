@@ -24,7 +24,9 @@ header.logo{
     font-size: clamp(1em, 2.5vw, 2em);
     font-weight: bold;
 }
-
+.installapp{
+    display: none;
+}
 .mode{
     cursor: pointer;
     width: 40px;

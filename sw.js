@@ -11,6 +11,7 @@ let assets = [
     './assets/style/style.css',
     './assets/notes.png',
     './manifest.json',
+    './js/install.js',
     'https://unpkg.com/dexie@latest/dist/dexie.js'
 ];
 self.addEventListener('install',(ev)=>{
