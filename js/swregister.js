@@ -14,15 +14,18 @@ const APP={
             navigator.serviceWorker.addEventListener('message',({data})=>{
                 console.log("message from service worker",data);
             });
+            const btn = document.querySelector('.installBtn');
             window.addEventListener('appinstalled', (ev) => {
                 console.log("app installed", ev);
+                APP.deferredInstall = null;
+                if(btn){ btn.style.display = 'none'; }
             });
             window.addEventListener('beforeinstallprompt',(ev)=>{
                 ev.preventDefault();
                 APP.deferredInstall = ev;
                 console.log("beforeinstallprompt");
+                if(btn) localStorage.setItem('installed','no');
             });
-            let btn = document.querySelector('.installBtn');
             btn?.addEventListener('click',APP.startChromeInstall); 
         }
         else{
@@ -37,12 +40,20 @@ const APP={
                 APP.deferredInstall.userChoice.then((choice)=>{
                     if(choice.outcome === 'accepted'){
                         console.log("user accepted the install prompt");
+                        const btn = document.querySelector('.installBtn');
+                        if(btn){ btn.style.display = 'none'; }
+                        localStorage.setItem('installed','yes');
                     }
                     else{
                         console.log("user dismissed the install prompt");
                     }
-            });
+            }
+        );
         }
     }
 };
+const btn = document.querySelector('.installBtn');
+if(btn){ 
+    localStorage.getItem('installed')==='yes'? btn.style.display = 'none' : btn.style.display = 'block';
+    }
 document.addEventListener('DOMContentLoaded',APP.init);
