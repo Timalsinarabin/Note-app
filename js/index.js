@@ -67,7 +67,7 @@ async function display(mark = false){
 const main = document.querySelector('.main');
 const noteData = document.querySelector('.note');
 
-const assignNote = document.querySelector('.container');
+const assignNote = document.querySelector('.noteblock');
 
 document.querySelector('.addNote').addEventListener('click',async ()=>{
     if(noteData.value.trim()==''){
