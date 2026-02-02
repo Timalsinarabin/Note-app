@@ -1,53 +1,48 @@
-allnotes = document.querySelector('.allnotes');
-pinned = document.querySelector('.pinnednote');
-undone = document.querySelector('.undonenotes');
-done = document.querySelector('.donenotes');
-sidebar = document.querySelector('.sidebar');
-menu = document.querySelector('.menu');
-overlay = document.querySelector('.overlay');
-sideMenu = document.querySelector('.sidebar-menu');
-
+const allnotes = document.querySelector('.allnotes');
+const pinned = document.querySelector('.pinnednote');
+const undone = document.querySelector('.undonenotes');
+const done = document.querySelector('.donenotes');
+const sidebar = document.querySelector('.sidebar');
+const menu = document.querySelector('.menu');
+const overlay = document.querySelector('.overlay');
+const sideMenu = document.querySelector('.sidebar-menu');
+const mainContent = document.querySelector('.main');
 function closeSidebar() {
-    document.body.classList.remove('menu-active');
-    sidebar.style.display = 'none';
+    sidebar.classList.remove('active');  
+    overlay.classList.remove('show');     
     menu.style.display = 'block';
+    sideMenu.style.display = 'none'
+    mainContent.classList.remove('shift');
 }
+
 menu.addEventListener('click', () => {
-    document.body.classList.add('menu-active');
-    sidebar.style.display = 'block';
+    sidebar.classList.add('active');   
+    overlay.classList.add('show');
     menu.style.display = 'none';
-}
-);
-overlay.addEventListener('click', () => {
-    closeSidebar();
+    sideMenu.style.display = 'block'
+    mainContent.classList.add('shift');
 });
+
+overlay.addEventListener('click', closeSidebar);
+
 allnotes.addEventListener('click', () => {
-    display()
-    sidebar.style.display = 'none';
-    menu.style.display = 'block';
+    display();
     closeSidebar();
 });
 
 pinned.addEventListener('click', () => {
-    display('pinned')
-    sidebar.style.display = 'none';
-    menu.style.display = 'block';
+    display('pinned');
     closeSidebar();
 }); 
 
 undone.addEventListener('click', () => {
-    display('undone')
-    sidebar.style.display = 'none';
-    menu.style.display = 'block';
+    display('undone');
     closeSidebar();
 });
 
 done.addEventListener('click', () => {
-    display('done')
-    sidebar.style.display = 'none';
-    menu.style.display = 'block';
+    display('done');
     closeSidebar();
 }); 
-sideMenu.addEventListener('click', () => {
-    closeSidebar();
-});
+
+sideMenu.addEventListener('click', closeSidebar);

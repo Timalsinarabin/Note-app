@@ -64,9 +64,8 @@ async function display(mark = false){
         render(allNotes);
     }
 }
-const main = document.querySelector('.main');
 const noteData = document.querySelector('.note');
-
+const error = document.querySelector('.error');
 const assignNote = document.querySelector('.noteblock');
 
 document.querySelector('.addNote').addEventListener('click',async ()=>{
@@ -75,7 +74,7 @@ document.querySelector('.addNote').addEventListener('click',async ()=>{
         errDiv.className = 'errDiv';
         errDiv.innerText = 'Please enter a valid note';
         errDiv.style.color = 'red';
-        main.appendChild(errDiv);
+        error.appendChild(errDiv);
         setTimeout(()=>{
             errDiv.classList.add('animateErr');
         },2000);
@@ -87,17 +86,5 @@ document.querySelector('.addNote').addEventListener('click',async ()=>{
     noteData.value = '';
     display();
 })
-const sidebar = document.querySelector('.sidebar');
-document.querySelector('.menu').addEventListener('click',()=>{
-    sidebar.classList.toggle('active');
-    sidebar.style.display = 'block';
-    document.querySelector('.menu').style.display = 'none';
-    
-})
-document.querySelector('.sidebar-menu').addEventListener('click',()=>{
-    sidebar.classList.toggle('active');
-    document.querySelector('.menu').style.display = 'block';
-    sidebar.style.display = 'none';
-}           
-);
+
 display();
