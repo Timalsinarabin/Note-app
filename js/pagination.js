@@ -3,6 +3,8 @@ let currentPage = 1;
 const itemsPerPage = 4;
 
 async function createNote(id,text,color='white',mark = false,dec = false){
+    const col= document.createElement('div');
+    col.className = 'col'
     const div = document.createElement('div');
     div.className='items';
 
@@ -74,7 +76,8 @@ async function createNote(id,text,color='white',mark = false,dec = false){
 
     div.appendChild(note);
     div.appendChild(btns);
-    assignNote.appendChild(div);
+    col.appendChild(div);
+    assignNote.appendChild(col);
 }
 
 

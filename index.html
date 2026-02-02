@@ -3,42 +3,64 @@
 <head>
     <link rel="icon" href="./assets/notes.png">
     <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/style/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note app</title>
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-menu">☰</div>
-        <div class="allnotes">All notes</div>
-        <div class="pinnednote">pinned notes</div>
-        <div class="donenotes">Done notes</div>
-        <div class="undonenotes">Undone notes</div>
-        <div class="installBtn">Install app</div>
-    </aside>
-    <div class="overlay"></div>
-    <section class="main">
-        <div class="topbar">
-            <header class="logo">
+    <section class="container-fluid">
+
+        <div class="topbar row">
+            <header class="logo col-10 text-start fw-bold">
                 <div class="menu">☰</div>
                 <h1>Take a note</h1>
             </header>
-            <button class="mode">☀️</button>
-        </div>
-        <div class="container"></div>
-
-        <div class="pageToggle">
-            <button class="prevPage"><</button>
-            <div class="currPage"></div>
-            <button class="nextPage">></button>
+            <div class="col-2 d-flex justify-content-end align-items-center">
+                <button class="mode"></button>
+            </div>
         </div>
 
-        <div class="takeNote">
-            <textarea class="note" id="note" rows="2" placeholder="Enter your note here..." autofocus></textarea>
-            <button class="addNote">Save</button>
+        <div class="row">
+            <div class="side col-2">
+                <aside class="sidebar">
+                    <div class="sidebar-menu">☰</div>
+                    <div class="allnotes">All notes</div>
+                    <div class="pinnednote">pinned notes</div>
+                    <div class="donenotes">Done notes</div>
+                    <div class="undonenotes">Undone notes</div>
+                    <div class="installBtn">Install app</div>
+                </aside>
+                <div class="overlay"></div>
+            </div>
+            <div class="main col-8">
+                <div class="noteArea">
+                    <div class="noteblock row row-cols-1 row-cols-lg-2 g-4 m-2"></div>
+    
+                    <div class="row text-center align-items-center justify-content-center g-3 m-1">
+                        <div class="col-auto">
+                            <div class="prevPage"><</div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="currPage"></div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="nextPage">></div>
+                        </div>
+                    </div>
+
+                    <div class="takeNote row">
+                        <textarea class="note col-5 height-5" id="note" rows="2" placeholder="Enter your note here..." autofocus></textarea>
+                        <button class="btn btn-primary addNote col-auto">Save</button>
+                    </div>
+                    <div class="error row"></div>
+                </div>
+            </div>
         </div>
+
     </section>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/swregister.js"></script>
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
     <script src="js/mode.js"></script>
