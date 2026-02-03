@@ -84,7 +84,17 @@ document.querySelector('.addNote').addEventListener('click',async ()=>{
     const id = await addNote(text);
     await createNote(id,text);
     noteData.value = '';
+    closeform();
     display();
 })
-
+const addnotebtn = document.querySelector('.note-add');
+const form= document.getElementById("noteform");
+const close=document.querySelector('.close');
+addnotebtn.addEventListener('click',()=>{
+    form.style.display = 'flex';
+})
+close.addEventListener('click',closeform);
+function closeform(){
+    form.style.display = 'none';
+}
 display();
