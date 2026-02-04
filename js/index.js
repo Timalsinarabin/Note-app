@@ -69,6 +69,9 @@ const error = document.querySelector('.error');
 const assignNote = document.querySelector('.noteblock');
 
 document.querySelector('.addNote').addEventListener('click',async ()=>{
+
+    const olderr = document.querySelector('.errdiv');
+    if(olderr) olderr.remove();
     if(noteData.value.trim()==''){
         const errDiv = document.createElement('div');
         errDiv.className = 'errDiv';
@@ -77,24 +80,14 @@ document.querySelector('.addNote').addEventListener('click',async ()=>{
         error.appendChild(errDiv);
         setTimeout(()=>{
             errDiv.classList.add('animateErr');
-        },2000);
+        },5000);
         return;
     }
     const text = noteData.value;
     const id = await addNote(text);
     await createNote(id,text);
     noteData.value = '';
-    closeform();
-    display();
+    
 })
-const addnotebtn = document.querySelector('.note-add');
-const form= document.getElementById("noteform");
-const close=document.querySelector('.close');
-addnotebtn.addEventListener('click',()=>{
-    form.style.display = 'flex';
-})
-close.addEventListener('click',closeform);
-function closeform(){
-    form.style.display = 'none';
-}
+
 display();

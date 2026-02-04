@@ -18,57 +18,42 @@ body{
     color: var(--text-color);
 }
 .topbar{
-    min-height: 20vh;
-    border-bottom: 2px solid black;
+    min-height: 15vh;
 }
 header {
-    display: flex;
-    align-items: center;
     font-size: clamp(1em, 2.5vw, 2em);
 }
 
-.installBtn{
-    display: none;
-}
-.mode{
-    cursor: pointer;
-    font-size: 2em;
-    border: none;
-    background-color: transparent;
-}
-.sidebar{
-    height: 100%;
-    width: 300px;
-    position: fixed;
-    left: -500px;
-    background-image: var(--bg-image);
-    border-right: 2px solid var(--text-color);
-    transition: left 0.5s ease;
-    z-index: 1000;
-}
-.sidebar.active{
-    left: 0px;
-}
-.sidebar div{
-    cursor: pointer;
-    padding: 10px;
-    text-align: center;
-}
-.sidebar div:hover{
-    background-color: rgba(0,0,0,0.1);
+ .dark-mode .navbar-toggler-icon{
+    filter:invert(1);
 }
 
+.mode{
+    font-size: 2em;
+    background-color: transparent;
+}
+.offcanvas-title{
+    font-size: clamp(2em ,5vw,4em);
+}
+.offcanvas.offcanvas-start.show{
+    color: var(--text-color);
+    background-image: var(--bg-image);
+}
+.offcanvas.offcanvas-start.show button{
+    font-size: 25px; 
+}
+.dark-mode .offcanvas.offcanvas-start.show button{
+    filter: invert(1);
+}
+.note-nav{
+    padding: 25px;
+}
 .noteblock{
     overflow-y: auto;
 }
-.menu{
-    cursor: pointer;
-    padding: 5px;
-    font-size: clamp(1em, 1.5em, 3em);
-}
+
 .errDiv{
-    position: absolute;
-    text-align: center;
+    position: fixed;
     margin-bottom: 10px;
     font-weight: bold;
     transition: opacity 0.55s ease-out, visibility 0.55s ease-out;
@@ -87,52 +72,27 @@ header {
     border-radius: 5px;
     box-shadow: 1px 1px 5px grey;
     overflow: hidden;
-    max-height: 19px;
+    max-height: 20px;
     transition: all 0.5s ease;
 }
 
-.takeNote{
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    gap: 10px;
-}
-textarea#note {
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    border-radius: 12px;
-    border: 2px solid black;
-    font-size: 1rem;
-    backdrop-filter: blur(10px);
-}
+
 .close{
     position: absolute;
     right: 10px;
     top: 10px;
     cursor: pointer;
 }
-#noteform{
-    height: 50vh;
-    width: 50vw;
-    display: none;
-    position: fixed;
-    top: 25vh;
-    border-radius: 15px;
-    border: 2px solid black;
-    left: 25vw;
-    z-index: 100;
-    background-image: linear-gradient(to right,purple,#495a95);
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-}
 
-.note{
-    resize: none;
+#note-text{
+    width: 100%;
+    background: transparent;
+}
+.modal-content{
+    background-image: var(--bg-image);
+}
+.modal-dialog{
+    margin-top: 20vh;
 }
 .items:hover{
     max-height: 20vh;
@@ -149,7 +109,9 @@ textarea#note {
     margin-top: 10px;
     gap: 10px;
 }
-
+.installBtn{
+    display: none;
+}
 .btnDone,.delbtn{
     width: 40%;
     padding: 10px;
@@ -179,7 +141,9 @@ textarea#note {
 .btnDone:hover{
 background-color: lime;
 }
-
+.delbtn:hover{
+    background-color: red;
+}
 .prevPage,.nextPage{
     cursor: pointer;
     font-size: 1.8em;
@@ -189,28 +153,4 @@ background-color: lime;
 .currPage{
     font-weight: 500;
     font-size: 1.2em;
-}
-@media (max-width:1000px) {
-    .sidebar{
-        position: fixed;
-        left: -100%;
-        height: 100%;
-        width: 300px;
-        transition: 0.3s ease;
-        z-index: 1000;
-    } 
-}
-@media (max-width:700px) {
-    .sidebar{
-        position: fixed;
-        left: -100%;
-        height: 100%;
-        width: 100%;
-        transition: 0.3s ease;
-        z-index: 1000;
-        background-image: var(--bg-image);
-    } 
-    .topbar{
-        border: none;
-    }
 }
