@@ -1,5 +1,4 @@
 let modeButton = document.querySelector('.mode');
-let note = document.querySelector('.note');
 
 modeButton.addEventListener('click',()=>{
     document.body.classList.toggle('dark-mode');
@@ -17,12 +16,8 @@ modeButton.addEventListener('click',()=>{
 if(localStorage.getItem('mode')==='dark'){
     document.body.classList.add('dark-mode');
     modeButton.innerText = '🌙'
-    note.style.color = 'white';
-    note.style.border = '1px solid white';
 }
 else if(localStorage.getItem('mode')==='light'){
     document.body.classList.remove('dark-mode');
     modeButton.innerText = '☀️'
-    note.style.color = 'black';
-    note.style.border = '1px solid black';
 }

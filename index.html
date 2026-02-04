@@ -30,17 +30,15 @@
             <div class="main col-12 my-1">
                 <div class="noteArea">
                     <div class="noteblock row row-cols-1 row-cols-lg-2 g-4 m-2"></div>
-    
+                    
+                    <nav class="row" aria-label="Page navigation">
+                        <ul class="pagination justify-content-center align-items-center">
+                            <li class="page-item"><a class="prevPage page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="currPage page-link" href="#"></a></li>
+                            <li class="page-item"><a class="nextPage page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
                         <div class="row text-center align-items-center justify-content-center g-3 m-1">
-                            <div class="col-auto">
-                            <div class="prevPage"><</div>
-                            </div>
-                            <div class="col-auto">
-                                <div class="currPage"></div>
-                            </div>
-                            <div class="col-auto">
-                                <div class="nextPage">></div>
-                            </div>
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#notemodal">Add a note</button>
                         </div>
                     </div>
@@ -60,7 +58,7 @@
             <div class="note-nav donenotes">Done notes</div>
             <div class="note-nav undonenotes">Undone notes</div>
             <div class="note-nav installBtn">Install app</div>
-            <button class="mode pointer-event border-0"></button>
+            <button class="mode pointer-event border-0"><i class="bi bi-moon"></i></button>
             <div class="overlay"></div>  
         </div>
     </div>
@@ -75,11 +73,12 @@
                 </div>
 
                 <div class="modal-body">
-                    <textarea id="note-text" class="note"placeholder="Enter your note here..." autofocus></textarea>
+                    <textarea id="note-text" class="note" placeholder="Enter your note here..." autofocus></textarea>
+                    <div class="error d-flex justify-content-start align-items-start mb-2"></div>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary addNote col-auto">Save</button>
-                    <div class="error d-flex justify-content-center align-items-center mt-3"></div>
+                    
                 </div>
                 
             </div>
