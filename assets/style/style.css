@@ -24,7 +24,7 @@ header {
     font-size: clamp(1em, 2.5vw, 2em);
 }
 
- .dark-mode .navbar-toggler-icon{
+.dark-mode .navbar-toggler-icon{
     filter:invert(1);
 }
 
@@ -45,13 +45,20 @@ header {
 .dark-mode .offcanvas.offcanvas-start.show button{
     filter: invert(1);
 }
+.note{
+    border-radius: 10px;
+    height: 100px;
+    padding: 10px;
+}
 .note-nav{
     padding: 25px;
 }
 .noteblock{
     overflow-y: auto;
 }
-
+.dark-mode .btn-close{
+    filter: invert(1);
+}
 .errDiv{
     position: fixed;
     margin-bottom: 10px;
@@ -63,7 +70,7 @@ header {
     visibility: hidden;
 }
 .items{
-    min-height: 60px;
+    min-height: 70px;
     position: relative;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -144,13 +151,7 @@ background-color: lime;
 .delbtn:hover{
     background-color: red;
 }
-.prevPage,.nextPage{
-    cursor: pointer;
-    font-size: 1.8em;
-    min-width: 40px;
-    font-weight: 500px;
-}
-.currPage{
-    font-weight: 500;
+.prevPage,.nextPage,.currPage{
+    margin-top: 30px;
     font-size: 1.2em;
 }
