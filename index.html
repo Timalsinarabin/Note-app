@@ -16,7 +16,7 @@
             <header class="logo col-10 text-start fw-bold d-flex align-items-center">
                 <h1>
                     <a href="index.html"><i class="bi bi-card-checklist"></i></a>
-                    Take a note</h1>
+                    <a class="text-decoration-none" href="menu.html">Take a note</a></h1>
             </header>
             <div class="navbar col-2">
                 <button href="#sidebar" class="navbar-toggler" data-bs-toggle="offcanvas" type="button" aria-controls="sidebar" aria-label="toggle navigation">
@@ -38,8 +38,8 @@
                             <li class="page-item"><a class="nextPage page-link" href="#">Next</a></li>
                         </ul>
                     </nav>
-                        <div class="row text-center align-items-center justify-content-center g-3 m-1">
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#notemodal">Add a note</button>
+                        <div class="row text-center align-items-center justify-content-center m-2">
+                            <button class="btn btn-primary col-8" data-bs-toggle="modal" data-bs-target="#notemodal">Add a note</button>
                         </div>
                     </div>
                 </div>
@@ -74,10 +74,11 @@
 
                 <div class="modal-body">
                     <textarea id="note-text" class="note" placeholder="Enter your note here..." autofocus></textarea>
-                    <div class="error d-flex justify-content-start align-items-start mb-2"></div>
+                    
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary addNote col-auto">Save</button>
+                    <div class="error d-flex justify-content-center mt-5"></div>
+                    <button class="btn btn-primary addNote ">Save</button>
                     
                 </div>
                 

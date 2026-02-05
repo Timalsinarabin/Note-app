@@ -67,19 +67,19 @@ async function display(mark = false){
 const noteData = document.querySelector('.note');
 const error = document.querySelector('.error');
 const assignNote = document.querySelector('.noteblock');
-
 document.querySelector('.addNote').addEventListener('click',async ()=>{
 
     const olderr = document.querySelector('.errdiv');
     if(olderr) olderr.remove();
     if(noteData.value.trim()==''){
         const errDiv = document.createElement('div');
-        errDiv.className = 'errDiv';
+        errDiv.className = 'errDiv alert alert-danger';
         errDiv.innerText = 'Please enter a valid note';
         errDiv.style.color = 'red';
         error.appendChild(errDiv);
         setTimeout(()=>{
             errDiv.classList.add('animateErr');
+            error.style.display = 'block'
         },5000);
         return;
     }
