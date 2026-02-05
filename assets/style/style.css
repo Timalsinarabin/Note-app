@@ -13,12 +13,15 @@
 html,body{
     height: 100%;
 }
+.btn{
+    font-size: 1em;
+}
 body{
     background-image: var(--bg-image);
     color: var(--text-color);
 }
-header {
-    font-size: clamp(1em, 2.5vw, 2em);
+.navbar-brand{
+    font-size: clamp(2em, 3vw, 3em);
 }
 
 .dark-mode .navbar-toggler-icon{
@@ -49,6 +52,9 @@ header {
 }
 .note-nav{
     padding: 20px;
+}
+.navbar-brand{
+    color: var(--text-color);
 }
 .topbar{
     height: clamp(50px,12vh,100px);
@@ -152,6 +158,6 @@ background-color: lime;
     background-color: red;
 }
 .prevPage,.nextPage,.currPage{
-    margin-top: 15px;
-    font-size: 1.2em;
+    margin-top: 20px;
+    font-size: 0.75em;
 }

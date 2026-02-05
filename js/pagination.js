@@ -19,7 +19,7 @@ async function createNote(id,text,color='white',mark = false,dec = false){
 
     const btn = document.createElement('button');
     btn.className='delbtn';
-    btn.className ='btn btn-outline-danger';
+    btn.className ='btn btn-danger';
     btn.innerText = '⌫';
     
     btn.addEventListener('click',async()=>{
@@ -30,7 +30,7 @@ async function createNote(id,text,color='white',mark = false,dec = false){
 
     const btnDone = document.createElement('button');
     btnDone.className='btnDone';
-    btnDone.className = "btn btn-outline-primary"
+    btnDone.className = "btn btn-primary"
 
     const btnPin = document.createElement('div');
     btnPin.className='btnPin';

@@ -11,20 +11,20 @@
     <title>Note app</title>
 </head>
 <body>
-    <section class="container-fluid">
-        <div class="topbar row text-secondary">
+    <navbar class="navbar bg-body-transparent">
+        <section class="container-fluid">
             <header class="logo col-10 text-start fw-bold d-flex align-items-center">
-                <h1>
                     <a href="index.html"><i class="bi bi-card-checklist"></i></a>
-                    <a class="text-decoration-none" href="menu.html">Take a note</a></h1>
+                    <a class="navbar-brand m-2 h1" href="menu.html">Take a note</a>
             </header>
             <div class="navbar col-2">
                 <button href="#sidebar" class="navbar-toggler" data-bs-toggle="offcanvas" type="button" aria-controls="sidebar" aria-label="toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-        </div>
-    </section>
+        </section>
+    </navbar>
+
     <section>
         <div class="container">
             <div class="main col-12 my-1">
@@ -53,6 +53,10 @@
             <button type="button" class="btn-close d-flex justify-content-end" data-bs-dismiss="offcanvas" aria-label="close"></button>
         </div>
         <div class="offcanvas-body d-flex justify-content-center align-items-center flex-column">
+            <form class="d-flex" role="search">
+                <input type="search" class="form-control me-2" placeholder="Search for a note" aria-label="search"/>
+                <button class="btn btn-success" type="submit">Search</button>
+            </form>
             <div class="note-nav allnotes">All notes</div>
             <div class="note-nav pinnednote">pinned notes</div>
             <div class="note-nav donenotes">Done notes</div>
