@@ -3,12 +3,14 @@ const cacheName = `note-cache-${version}`;
 let assets = [
    './',
     './index.html',
+    './menu.html',
     './js/index.js',
     './js/mode.js',
     './js/swregister.js',
     './js/pagination.js',
     './js/sidebar.js',
     './assets/style/style.css',
+    './assets/style/one.css',
     './assets/notes.png',
     './manifest.json',
     'https://unpkg.com/dexie@latest/dist/dexie.js'
