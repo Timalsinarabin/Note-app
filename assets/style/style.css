@@ -17,9 +17,6 @@ body{
     background-image: var(--bg-image);
     color: var(--text-color);
 }
-.topbar{
-    min-height: 15vh;
-}
 header {
     font-size: clamp(1em, 2.5vw, 2em);
 }
@@ -47,11 +44,14 @@ header {
 }
 .note{
     border-radius: 10px;
-    height: 100px;
-    padding: 10px;
+    height: 100%;
+    padding: 5px;
 }
 .note-nav{
-    padding: 25px;
+    padding: 20px;
+}
+.topbar{
+    height: clamp(50px,12vh,100px);
 }
 .noteblock{
     overflow-y: auto;
@@ -82,8 +82,6 @@ header {
     max-height: 20px;
     transition: all 0.5s ease;
 }
-
-
 .close{
     position: absolute;
     right: 10px;
@@ -94,6 +92,7 @@ header {
 #note-text{
     width: 100%;
     background: transparent;
+    color: var(--text-color);
 }
 .modal-content{
     background-image: var(--bg-image);
@@ -120,14 +119,15 @@ header {
     display: none;
 }
 .btnDone,.delbtn{
+    position: relative;
     width: 40%;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     border: 2px solid var(--text-color);
     background-color: transparent;
     cursor: pointer;
-    font-size: 1.3em;
-    font-weight: 600;
+    font-size: 1em;
+    font-weight: 400;
     color: (var(--text-color));
 }
 .btnPin{
@@ -152,6 +152,6 @@ background-color: lime;
     background-color: red;
 }
 .prevPage,.nextPage,.currPage{
-    margin-top: 30px;
+    margin-top: 15px;
     font-size: 1.2em;
 }
