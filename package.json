@@ -182,8 +182,11 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "@tailwindcss/cli": "^4.1.18",
+    "autoprefixer": "^10.4.24",
     "eslint": "^9.39.2",
     "globals": "^17.0.0",
+    "tailwindcss": "^4.1.18",
     "workbox-cli": "^7.4.0"
   }
 }
