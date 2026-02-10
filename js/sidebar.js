@@ -6,6 +6,7 @@ const sideMenu = document.querySelector('.side-menu');
 const sidebar =document.querySelector('.sidebar');
 const search = document.querySelector('.search');
 const title =document.querySelector('.menu-title');
+const install = document.querySelector('.install');
 const sections = [allnotes, pinned, undone, done,search,title];
 
 if(!sidebar.classList.contains('sidebar-active')){
@@ -19,6 +20,7 @@ sideMenu.addEventListener('click',()=>{
         sections.forEach(div => {
             div.style.display = 'none';
         });
+        install.style.display = 'none';
     }else{
         sections.forEach(div => {
             div.style.display = 'block';
