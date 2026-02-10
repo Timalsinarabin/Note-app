@@ -1,38 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <link rel="icon" href="./assets/notes.png">
+    <link rel="manifest" href="./manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style/output.css">
     <title>Note app</title>
 </head>
 <body>
-    <section class="container-xl md:m-4 p-4">
-        <h1 class="text-violet-500 font-mono text-2xl text-center">Note App</h1>
+    <section class="container-fluid md:m-4 p-4">
+        <h1 class="text-violet-500 font-mono text-3xl text-center mb-3 mt-3">Note App</h1>
     </section>
-
-    <section class=" text-center border-box p-4 box-border bg-violet-500">
-        <div class="text-white">Take a note using this app</div>
-        <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta vel fugiat rerum eos nesciunt deserunt beatae dolorum unde, quibusdam laboriosam ratione enim.
-        </p>
-        <div class="my-4">
-            <a class="box box-border border-2 rounded-lg p-2 bg-white" href="index.html">Explore</a>
+    <section class="ml-10">
+        <div class="container-fluid m-4 g-4">
+            <div class="noteArea">
+                <div class="noteblock grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                <div class="text-center m-2">
+                    <button class="addnote box-border bg-violet-300 border rounded p-2 mt-3 cursor-pointer">Add a note</button>
+                </div>
+            </div>
         </div>
-        </section>
-        
-        <section class="text-center grid grid-cols-1 md:grid-cols-3 m-4">
-            <span class="md:col-span-3 my-4">Services</span>
-            <div class="box-border m-1 p-5 bg-violet-500 min-h-[180px] md:min-h-[250px]">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo quibusdam laborum, blanditiis tempore alias adipisci.
-            </div>
-            <div class="box-border m-1 p-5 bg-violet-500 min-h-[180px] md:min-h-[250px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga neque consectetur autem quia enim vitae.
-            </div>
-            <div class="box-border m-1 p-8 bg-violet-500 min-h-[180px] md:min-h-[250px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga neque consectetur autem quia enim vitae.
-            </div>
-        </section>
-    
+    </section>
+    <aside class="sidebar box-border border-r-2 bg-purple-300 h-screen p-3 top-0 absolute">
+        <div class="offcanvas-header">
+            <h5 class="menu-title offcanvas-title text-2xl">Menu</h5>
+            <svg class="side-menu bg-transparent absolute top-4 right-1 w-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </div>
+        <div class="text-center">
+            <form class="search d-flex mt-25" role="search">
+                <input type="search" class="form-control" placeholder="Search for a note" >
+                <button class="btn btn-success" type="submit">Search</button>
+            </form>
+            <div class="note-nav p-5 allnotes">All notes</div>
+            <div class="note-nav p-4 pinnednote">pinned notes</div>
+            <div class="note-nav p-4 donenotes">Done notes</div>
+            <div class="note-nav p-4 undonenotes">Undone notes</div>
+            <div class="note-nav p-4 installBtn">Install app</div>
+            <button class="mode mt-10 cursor-pointer border-0"></button>
+            <div class="overlay"></div>  
+        </div>
+    </aside>
+    <section class="pagination ml-10">
+        <ul class="pagination flex justify-center items-center gap-2">
+            <li class="page-item"><a class="prevPage page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="currPage page-link" href="#"></a></li>
+            <li class="page-item"><a class="nextPage page-link" href="#">Next</a></li>
+        </ul>
+    </section>
+    </div>
 
+    <div class="enternote box-border text-center hidden">
+        <div class="w-64 border z-10 bg-purple-200 absolute top-25">
+            <div class="header">
+                <h1 class="text-xl">Enter note:</h1>
+                <h1 class="closeMenu absolute top-0 right-5">X</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <textarea id="note-text" class="note" placeholder="Enter your note here..." autofocus></textarea>   
+            </div>
+            <div class="modal-footer">
+                <div class="error d-flex justify-content-center mt-5"></div>
+                <button class="btn btn-primary addNote ">Save</button>
+
+            </div>
+        </div>
+        
+                
+    </div>
+
+    <script src="js/swregister.js"></script>
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="js/mode.js"></script>
+    <script src="js/pagination.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/index.js"></script>
+    
 </body>
 </html>
