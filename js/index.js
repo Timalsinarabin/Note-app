@@ -91,3 +91,14 @@ document.querySelector('.addNote').addEventListener('click',async ()=>{
 })
 
 display();
+
+const enternote = document.querySelector('.enternote');
+const addnote = document.querySelector('.addnote');
+const closeMenu = document.querySelector('.closeMenu')
+addnote.addEventListener('click',()=>{
+    enternote.style.display ='flex';
+    enternote.classList.add('justify-center');
+})
+closeMenu.addEventListener('click',()=>{
+    enternote.style.display ='none';
+})
